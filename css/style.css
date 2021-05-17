@@ -1,0 +1,196 @@
+:root{
+    --primaryColor: #00204A;
+    --secondaryColor: #f8fafe;
+}
+/* --- ESTILOS GENERALES --- */
+body{
+    background-color: #E3E4E9;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.container {  
+    max-width: 62.5rem;  
+    width: 90%;
+    box-sizing: border-box;
+    margin: 0.62em auto;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 2fr  1fr;
+    grid-template-rows: repeat(4,auto);
+    grid-template-areas:  'header header'
+                        'article  video'
+                        'article redes'
+                        'footer   footer'
+}
+.main-article .title,
+.video-section .title,
+.redes-sociales .title{
+    color: var(--primaryColor);
+}
+
+/* --- HEADER --- */
+.header{
+    grid-area: header;
+    background: var(--primaryColor);
+}
+.header .logo{
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header .logo .icon{
+    padding-right: 0.62rem;
+    font-size: 2.5rem;
+    color: #4cc259;
+}
+.header .logo h1{
+    color: #E1E2E4;
+    font-size: 1.87rem;
+}
+.header .logo .icon:hover{
+    color: #378f40;
+}
+.header .logo h1:hover{
+    color: #9db5e4;
+}
+
+/*  --- ARTICULO PRINCIPAL --- */
+.main-article{
+    grid-area: article;
+    background: var(--secondaryColor);
+    padding: 15px;
+}
+.main-article .title{
+    font-size: 1.5rem;
+}
+.main-article .title,
+.main-article .article{
+    margin: 0px;
+}
+.main-article .article{
+    font-size: 0.87rem;
+    padding-top: 10px;
+}
+
+/* --- SECCIÓN VIDEO PRESENTACIÓN --- */
+.video-section{
+    grid-area: video;
+    text-align: center;
+    background: var(--secondaryColor);
+    padding: 10px;
+    height: 14.1rem;
+}
+.video-section .title{
+    margin-top: 5px;
+}
+
+/* --- REDES SOCIALES --- */
+.redes-sociales{
+    grid-area: redes;
+    background: var(--secondaryColor);
+    padding: 5px;
+}
+.redes-sociales .title{
+    margin-top: 5px;
+    text-align: center;
+}
+.redes-sociales .containerRS{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.redes-sociales .containerRS .twitter{
+    background: #1da1f2;
+}
+.redes-sociales .containerRS .linkedin{
+    background: #0077b5;
+}
+.redes-sociales .containerRS .twitter,
+.redes-sociales .containerRS .linkedin{
+    text-decoration: none;
+    color: var(--secondaryColor);
+    padding: 10px;
+    border-radius: 15px;
+}
+.redes-sociales .containerRS .fab{
+    padding: 5px;
+    border-right: 1px solid #E1E1E1;
+}
+.redes-sociales .containerRS .twitter .nameRS,
+.redes-sociales .containerRS .linkedin .nameRS{
+    padding-left: 5px;
+}
+.redes-sociales .containerRS .twitter:hover,
+.redes-sociales .containerRS .linkedin:hover{
+    background: #A1A2A4;
+}
+
+/* --- FOOTER --- */
+.footer{
+    grid-area: footer;
+    background: var(--primaryColor);
+    color: #E1E2E4;
+    text-align: center;
+    padding: 10px;
+}
+
+/* --- * MEDIA QUERIES * --- */
+@media screen and (max-width: 768px){    
+    .container{
+        grid-template-columns: 1.5fr 1fr;
+        grid-template-rows: repeat(4,auto);
+        grid-template-areas:  'header header'
+                            'article  article'
+                            'video   redes'
+                            'footer   footer'
+    }
+    /* -- HEADER -- */
+    .header .icon{
+        font-size: 2.19rem;}
+    .header .title{
+        font-size: 1.57rem;}
+    /* -- VIDEO PRESENTACIÓN -- */
+    .video-section{
+        height: 16.87rem;}
+    /* -- REDES SOCIALES */
+    .redes-sociales .title{
+        font-size: 1.25rem;}
+    .redes-sociales .containerRS{
+        flex-direction: column;}
+    .redes-sociales .containerRS .twitter{
+        margin: 30px 0px;}
+}
+
+@media screen and (max-width: 576px){
+    .container{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(5,auto);
+        grid-template-areas: 'header header'
+                            'article  article'
+                            'video   video'
+                            'redes   redes'
+                            'footer   footer'
+    }
+    /* -- HEADER -- */
+    .header .icon{ font-size: 2rem;}
+    .header .title{ font-size: 1.38rem;}
+    /* -- VIDEO PRESENTACIÓN -- */
+    .video-section{
+        background: var(--primaryColor);}
+    .video-section .title{
+        color: var(--secondaryColor);}
+    .video-section{
+        height: 14.37rem;}
+    .video-section .container-video{
+        margin: 0 auto;
+        width: 60%;
+        border: 2px solid var(--secondaryColor);
+    }
+    /* -- REDES SOCIALES -- */
+    .redes-sociales .containerRS{    
+        flex-direction: row;
+        justify-content: center;
+    }
+    .redes-sociales .containerRS .twitter{
+        margin-right: 40px;}   
+}
